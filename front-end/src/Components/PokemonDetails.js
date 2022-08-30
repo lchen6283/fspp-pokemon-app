@@ -14,13 +14,14 @@ function PokemonDetails() {
     axios
       .get(`${API}/pokemon/${id}`)
       .then((res) => {
-        setPokemon(res.data.payload);
+        setPokemon(res.data);
         navigate(`/pokemon/${id}`);
       })
       .catch(() => {
         navigate("/not found");
       });
   }, [id, navigate]);
+
   const handleDelete = () => {
     axios
       .delete(`${API}/pokemon/${id}`)
@@ -31,6 +32,7 @@ function PokemonDetails() {
         console.warn("error");
       });
   };
+
   return (
     <div className="pokemon-details">
       <hr></hr>

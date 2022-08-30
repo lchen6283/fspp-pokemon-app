@@ -1,11 +1,12 @@
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { useParams, Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 
 const API = process.env.REACT_APP_API_URL;
 
-function PokemonNew() {
+function PokemonEdit() {
   const navigate = useNavigate();
+  let { id } = useParams();
   const [pokemon, setPokemon] = useState({
     pokedex: "",
     name: "",
@@ -19,12 +20,23 @@ function PokemonNew() {
     setPokemon({ ...pokemon, [event.target.id]: event.target.value });
   };
 
+  useEffect(() => {
+    axios
+      .get(`${API}/pokemon/${id}`)
+      .then((res) => {
+        setPokemon(res.data);
+      })
+      .catch((err) => {
+        console.warn(err);
+      });
+  }, [id]);
+
   const handleSubmit = (event) => {
     event.preventDefault();
     axios
-      .post(`${API}/pokemon/new`, pokemon)
-      .then((res) => {
-        navigate("/pokemon");
+      .put(`${API}/pokemon/${id}`, pokemon)
+      .then(() => {
+        navigate(`/pokmeon/${id}`);
       })
       .catch((err) => {
         console.warn(err);
@@ -36,7 +48,7 @@ function PokemonNew() {
   };
 
   return (
-    <div className="NewForm">
+    <div className="EditForm">
       <form onSubmit={handleSubmit} autoComplete="off">
         <label htmlFor="pokedex">Pokedex No.</label>
         <input
@@ -81,10 +93,19 @@ function PokemonNew() {
           onChange={onChange}
         />
         <label htmlFor="image">Pokemon Image: </label>
-        <input id="image" type="text" onChange={handleTextChange} />
-        <input id="submit" type="submit" value="Add New Pokemon" />
+        <input
+          id="image"
+          type="text"
+          value={`${pokemon.image}`}
+          onChange={handleTextChange}
+        />
+        <input id="submit" type="submit" value="Edit Pokemon" />
       </form>
+      <Link to={`/pokemon/${id}`}>
+        <button>Back</button>
+      </Link>
     </div>
   );
 }
-export default PokemonNew;
+
+export default PokemonEdit;
