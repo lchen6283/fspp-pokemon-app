@@ -36,7 +36,7 @@ function PokemonEdit() {
     axios
       .put(`${API}/pokemon/${id}`, pokemon)
       .then(() => {
-        navigate(`/pokmeon/${id}`);
+        navigate(`/pokemon/${id}`);
       })
       .catch((err) => {
         console.warn(err);

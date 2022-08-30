@@ -16,7 +16,7 @@ const checkBoolean = (req, res, next) => {
 };
 
 const checkForNoAdditionalParams = (req, res, next) => {
-  const { pokedex, name, type, region, favorite, image, id, ...otherStuff } =
+  const { pokedex, name, type, region, favorite, image, ...otherStuff } =
     req.body;
   if (
     otherStuff &&

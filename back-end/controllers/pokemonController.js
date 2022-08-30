@@ -47,7 +47,7 @@ pokemon.post(
     try {
       const pokemon = await createPokemon(req.body);
       pokemon[0].name = formatName(pokemon[0].name);
-      res.json({ success: true, payload: snack[0] });
+      res.json(pokemon[0]);
     } catch (error) {
       res.status(400).json({ error: error });
     }
@@ -63,7 +63,7 @@ pokemon.put(
   async (req, res) => {
     try {
       const pokemon = await updatePokemon(req.params.id, req.body);
-      res.json({ success: true, payload: pokemon });
+      res.json(pokemon);
     } catch (error) {
       res.status(400).json({ success: false, error: error });
     }
@@ -74,11 +74,11 @@ pokemon.put(
 pokemon.delete("/:id", async (req, res) => {
   const { id } = req.params;
   const deletedPokemon = await deletePokemon(id);
-  if (deletePokemon) {
-    if (deletePokemon.id) {
-      res.status(200).json({ success: true, payload: deletedPokemon });
+  if (deletedPokemon) {
+    if (deletedPokemon.id) {
+      res.status(200).json(deletedPokemon);
     } else {
-      res.status(404).json({ success: false, payload: deletedPokemon });
+      res.status(404).json(deletedPokemon);
     }
   } else {
     res.status(500).json({ success: false, payload: deletedPokemon });

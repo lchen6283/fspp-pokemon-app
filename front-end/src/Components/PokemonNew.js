@@ -7,7 +7,7 @@ const API = process.env.REACT_APP_API_URL;
 function PokemonNew() {
   const navigate = useNavigate();
   const [pokemon, setPokemon] = useState({
-    pokedex: "",
+    pokedex: 0,
     name: "",
     type: "",
     region: "",
@@ -22,13 +22,14 @@ function PokemonNew() {
   const handleSubmit = (event) => {
     event.preventDefault();
     axios
-      .post(`${API}/pokemon/new`, pokemon)
-      .then((res) => {
-        navigate("/pokemon");
+      .post(`${API}/pokemon`, pokemon)
+      .then(() => {
+        navigate(`/pokemon`);
       })
       .catch((err) => {
         console.warn(err);
       });
+    console.log(`${API}/pokemon`);
   };
 
   const onChange = () => {
@@ -41,8 +42,8 @@ function PokemonNew() {
         <label htmlFor="pokedex">Pokedex No.</label>
         <input
           id="pokedex"
-          type="text"
-          value={pokemon.pokedex}
+          type="number"
+          // value={pokemon.pokedex}
           onChange={handleTextChange}
         />
         <label htmlFor="name">Name:</label>
