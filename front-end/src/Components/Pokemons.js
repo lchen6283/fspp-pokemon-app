@@ -18,7 +18,7 @@ function Pokemons() {
     <div className="Pokemons">
       <article>
         <div>
-          <h1>Pokemons List</h1>
+          <h1>My Pokemon List</h1>
           <hr />
           <table>
             <tbody>

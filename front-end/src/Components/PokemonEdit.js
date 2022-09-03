@@ -99,6 +99,7 @@ function PokemonEdit() {
           value={`${pokemon.image}`}
           onChange={handleTextChange}
         />
+        <br />
         <input id="submit" type="submit" value="Edit Pokemon" />
       </form>
       <Link to={`/pokemon/${id}`}>

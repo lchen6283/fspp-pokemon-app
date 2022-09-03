@@ -1,13 +1,126 @@
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: sans-serif;
+  background-color: red;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+nav {
+  display: flex;
+  background-color: whitesmoke;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1em 3em 1em 3em;
+  margin-bottom: 1em;
+}
+
+a {
+  text-decoration: none;
+  color: #fedc53;
+  text-shadow: 2px 2px blue;
+  font-size: xx-large;
+}
+
+.Home {
+  text-align: center;
+}
+
+.Pokemon {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 1em;
+  background-color: rgb(255, 252, 242);
+  box-shadow: 5px 5px 10px;
+  margin: 10px;
+}
+
+.fav {
+  width: 50%;
+}
+
+.hearts {
+  width: 10%;
+}
+
+tbody {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  text-align: center;
+}
+
+.New,
+.Edit {
+  padding: 1em;
+  background-color: rgb(255, 252, 242);
+  border: 1px solid yellow;
+}
+
+.NewForm,
+.EditForm {
+  margin: auto;
+  text-align: center;
+}
+
+label {
+  font-size: 40px;
+}
+
+input {
+  display: block;
+  padding: 5px;
+  width: 30%;
+  margin: auto;
+  margin-top: 10px;
+}
+
+.pokemon-details {
+  background-color: rgb(255, 252, 242);
+  text-align: center;
+  box-shadow: 5px 5px 10px;
+  width: 30%;
+  margin: auto;
+  margin-top: 12px;
+  padding-bottom: 20px;
+}
+
+.image {
+  width: 30%;
+}
+
+.showNavigation {
+  margin: auto;
+}
+.showNavigation button {
+  margin-right: 30px;
+}
+
+.card {
+  background-color: azure;
+  list-style: none;
+  padding: 10px;
+  color: black;
+  text-align: center;
+}
+
+.card-title {
+  text-transform: uppercase;
+  font: 32px;
+  font-weight: normal;
+  margin-bottom: 0;
+}
+
+.card-subtitle {
+  font-weight: lighter;
+  color: darkgray;
+  margin-top: 5px;
+}
+
+.card-image {
+  height: 150px;
+}
+
+#pokedex {
+  padding-inline-start: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-gap: 20px;
 }

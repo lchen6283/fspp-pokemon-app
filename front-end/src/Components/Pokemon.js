@@ -14,6 +14,7 @@ function Pokemon({ pokemon }) {
                 src={pokemon.image}
                 alt={pokemon.favorite ? "favorite pokemon" : "okay pokemon"}
               />
+              <br />
               <img
                 className="hearts"
                 src={pokemon.favorite ? heartSolid : heartOutline}

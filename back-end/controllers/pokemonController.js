@@ -63,7 +63,7 @@ pokemon.put(
   async (req, res) => {
     try {
       const pokemon = await updatePokemon(req.params.id, req.body);
-      res.json(pokemon);
+      res.json({ success: true, payload: pokemon });
     } catch (error) {
       res.status(400).json({ success: false, error: error });
     }

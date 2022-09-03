@@ -83,6 +83,7 @@ function PokemonNew() {
         />
         <label htmlFor="image">Pokemon Image: </label>
         <input id="image" type="text" onChange={handleTextChange} />
+        <br />
         <input id="submit" type="submit" value="Add New Pokemon" />
       </form>
     </div>

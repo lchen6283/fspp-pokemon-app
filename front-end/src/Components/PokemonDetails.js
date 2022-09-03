@@ -36,7 +36,7 @@ function PokemonDetails() {
   return (
     <div className="pokemon-details">
       <hr></hr>
-      <aside>
+      <aside className="details">
         <h2>
           {pokemon.favorite
             ? "This pokemon is AWESOME!"
@@ -58,19 +58,15 @@ function PokemonDetails() {
         </div>
 
         <div className="showNavigation">
-          <div>
-            <Link to={`/pokemon`}>
-              <button>Back</button>
-            </Link>
-          </div>
-          <div>
-            <Link to={`/pokemon/${pokemon.id}/edit`}>
-              <button>Edit</button>
-            </Link>
-          </div>
-          <div>
-            <button onClick={handleDelete}>Delete</button>
-          </div>
+          <Link to={`/pokemon`}>
+            <button>Back</button>
+          </Link>
+
+          <Link to={`/pokemon/${pokemon.id}/edit`}>
+            <button>Edit</button>
+          </Link>
+
+          <button onClick={handleDelete}>Delete</button>
         </div>
       </article>
     </div>
