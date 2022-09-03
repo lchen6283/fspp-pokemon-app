@@ -31,14 +31,17 @@ a {
   background-color: rgb(255, 252, 242);
   box-shadow: 5px 5px 10px;
   margin: 10px;
+  padding: 1px;
 }
 
 .fav {
   width: 50%;
 }
 
-.hearts {
-  width: 10%;
+.pkball {
+  width: 30px;
+  height: 30px;
+  object-fit: cover;
 }
 
 tbody {
@@ -70,6 +73,10 @@ input {
   width: 30%;
   margin: auto;
   margin-top: 10px;
+}
+
+input[type="checkbox"] {
+  height: 25px;
 }
 
 .pokemon-details {

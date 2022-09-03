@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
-import heartSolid from "../assets/heart-solid.png";
-import heartOutline from "../assets/heart-regular.png";
+import pokeballSolid from "../assets/pokeball-solid.png";
+import pokeballOutline from "../assets/pokeball-outline.png";
 
 function Pokemon({ pokemon }) {
   return (
@@ -16,8 +16,8 @@ function Pokemon({ pokemon }) {
               />
               <br />
               <img
-                className="hearts"
-                src={pokemon.favorite ? heartSolid : heartOutline}
+                className="pkball"
+                src={pokemon.favorite ? pokeballSolid : pokeballOutline}
                 alt="heart"
               />
               {pokemon.name}

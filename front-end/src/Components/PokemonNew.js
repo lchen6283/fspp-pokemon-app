@@ -39,7 +39,7 @@ function PokemonNew() {
   return (
     <div className="NewForm">
       <form onSubmit={handleSubmit} autoComplete="off">
-        <label htmlFor="pokedex">Pokedex No.</label>
+        <label htmlFor="pokedex">Pokédex No.</label>
         <input
           id="pokedex"
           type="number"

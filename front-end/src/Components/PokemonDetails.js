@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link, useParams, useNavigate } from "react-router-dom";
-import heartSolid from "../assets/heart-solid.png";
-import heartOutline from "../assets/heart-regular.png";
+import pokeballSolid from "../assets/pokeball-solid.png";
+import pokeballOutline from "../assets/pokeball-outline.png";
 import axios from "axios";
 
 const API = process.env.REACT_APP_API_URL;
@@ -43,8 +43,8 @@ function PokemonDetails() {
             : "This pokemon is okay."}
         </h2>
         <img
-          className="hearts"
-          src={pokemon.favorite ? heartSolid : heartOutline}
+          className="pkball"
+          src={pokemon.favorite ? pokeballSolid : pokeballOutline}
           alt={pokemon.favorite ? "AWESOME POKEMON" : "Okay Pokemon"}
         />
       </aside>
