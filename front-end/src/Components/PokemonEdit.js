@@ -84,7 +84,7 @@ function PokemonEdit() {
           onChange={handleTextChange}
           placeholder="region"
         />
-        <label htmlFor="favorite">Favorite</label>
+        <label htmlFor="favorite">Capture Status:</label>
         <input
           id="favorite"
           type="checkbox"

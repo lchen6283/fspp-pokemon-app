@@ -38,14 +38,20 @@ function PokemonDetails() {
       <hr></hr>
       <aside className="details">
         <h2>
-          {pokemon.favorite
-            ? "This pokemon is AWESOME!"
-            : "This pokemon is okay."}
+          {pokemon.favorite ? (
+            <p>
+              You have <p1>CAUGHT</p1> this pokemon!
+            </p>
+          ) : (
+            <p>
+              You have <p2>SEEN</p2> this pokemon!
+            </p>
+          )}
         </h2>
         <img
           className="pkball"
           src={pokemon.favorite ? pokeballSolid : pokeballOutline}
-          alt={pokemon.favorite ? "AWESOME POKEMON" : "Okay Pokemon"}
+          alt={pokemon.favorite ? "CAUGHT" : "SEEN"}
         />
       </aside>
       <article>

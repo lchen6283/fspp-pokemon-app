@@ -12,7 +12,7 @@ function Pokemon({ pokemon }) {
               <img
                 className="fav"
                 src={pokemon.image}
-                alt={pokemon.favorite ? "favorite pokemon" : "okay pokemon"}
+                alt={pokemon.favorite ? "caught" : "seen"}
               />
               <br />
               <img
