@@ -8,10 +8,10 @@ function Home() {
 
   const getPokemonList = async () => {
     let pokemonArray = [];
-    for (let i = 1; i <= 200; i++) {
+    for (let i = 1; i <= 905; i++) {
       pokemonArray.push(await getPokemonData(i));
     }
-    console.log(pokemonArray);
+    // console.log(pokemonArray);
     setPokemon(pokemonArray);
   };
 

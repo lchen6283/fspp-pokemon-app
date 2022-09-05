@@ -78,6 +78,7 @@ tbody {
 .EditForm {
   margin: auto;
   text-align: center;
+  margin-bottom: 50px;
 }
 
 label {
@@ -104,6 +105,7 @@ input[type="checkbox"] {
   margin: auto;
   margin-top: 12px;
   padding-bottom: 20px;
+  margin-bottom: 50px;
 }
 
 .image {
@@ -146,8 +148,15 @@ ol {
 
 .card-subtitle {
   font-weight: lighter;
-  color: darkgray;
+  color: white;
   margin-top: 5px;
+  display: grid;
+  grid-template-rows: repeat(2, 1fr);
+}
+
+.type {
+  margin: 0px 80px;
+  border-radius: 10px;
 }
 
 .card-image {
@@ -203,4 +212,9 @@ p1 {
 
 p2 {
   color: red;
+}
+
+.index-backbutton {
+  margin-left: 12px;
+  margin-bottom: 50px;
 }

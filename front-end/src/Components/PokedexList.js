@@ -1,4 +1,5 @@
 import React from "react";
+import typeColors from "./PokemonTypeColors";
 
 export default function PokedexList({ pokemon }) {
   return (
@@ -14,7 +15,16 @@ export default function PokedexList({ pokemon }) {
             {pokemon.id}. {pokemon.name}
           </h2>
           <p className="card-subtitle">
-            Type: {pokemon.types.map((type) => type.type.name).join(", ")}
+            {pokemon.types.map((type) => {
+              return (
+                <div
+                  className="type"
+                  style={{ backgroundColor: typeColors[type.type.name] }}
+                >
+                  {type.type.name}
+                </div>
+              );
+            })}
           </p>
         </li>
       </ol>

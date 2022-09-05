@@ -28,7 +28,7 @@ function Pokemons() {
             </tbody>
           </table>
           <br />
-          <button>
+          <button className="index-backbutton">
             <Link to={"/"}>Back</Link>
           </button>
         </div>
