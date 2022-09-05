@@ -6,7 +6,7 @@ export default function NavBar() {
       <h1 className="header">
         <Link to="/">Pokédex</Link>
       </h1>
-      <h1>
+      <h1 className="header">
         <Link to="/pokemon">Index</Link>
       </h1>
       <button>

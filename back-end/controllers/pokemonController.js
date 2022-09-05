@@ -55,20 +55,14 @@ pokemon.post(
 );
 
 // UPDATE
-pokemon.put(
-  "/:id",
-  checkName,
-  checkBoolean,
-  checkForNoAdditionalParams,
-  async (req, res) => {
-    try {
-      const pokemon = await updatePokemon(req.params.id, req.body);
-      res.json({ success: true, payload: pokemon });
-    } catch (error) {
-      res.status(400).json({ success: false, error: error });
-    }
+pokemon.put("/:id", async (req, res) => {
+  try {
+    const pokemon = await updatePokemon(req.params.id, req.body);
+    res.json({ success: true, payload: pokemon });
+  } catch (error) {
+    res.status(400).json({ success: false, error: error });
   }
-);
+});
 
 // DELETE
 pokemon.delete("/:id", async (req, res) => {

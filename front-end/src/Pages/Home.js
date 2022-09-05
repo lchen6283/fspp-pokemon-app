@@ -1,46 +1,40 @@
+import React, { useState, useEffect } from "react";
+import PokedexList from "../Components/PokedexList";
+import BacktoTopButton from "../Components/BacktoTopButton";
+import axios from "axios";
+
 function Home() {
-  const pokedex = document.getElementById("pokedex");
+  const [pokemon, setPokemon] = useState([]);
 
-  const fetchPokemon = () => {
-    const promises = [];
-    for (let i = 1; i <= 905; i++) {
-      const url = `https://pokeapi.co/api/v2/pokemon/${i}`;
-      promises.push(fetch(url).then((res) => res.json()));
+  const getPokemonList = async () => {
+    let pokemonArray = [];
+    for (let i = 1; i <= 200; i++) {
+      pokemonArray.push(await getPokemonData(i));
     }
-
-    Promise.all(promises).then((results) => {
-      const pokemon = results.map((data) => ({
-        name: data.name,
-        id: data.id,
-        image: data.sprites["front_default"],
-        type: data.types.map((type) => type.type.name).join(", "),
-      }));
-      displayPokemon(pokemon);
-    });
+    console.log(pokemonArray);
+    setPokemon(pokemonArray);
   };
 
-  const displayPokemon = (pokemon) => {
-    // console.log(pokemon);
-    const pkHTML = pokemon
-      .map(
-        (pokeman) => `
-    <li class='card'>
-      <img class='card-image' src='${pokeman.image}'/>
-      <h2 class='card-title'>${pokeman.id}. ${pokeman.name}</h2>
-      <p class='card-subtitle'>Type: ${pokeman.type}</p>
-    </li>
-    `
-      )
-      .join("");
-    pokedex.innerHTML = pkHTML;
+  const getPokemonData = async (id) => {
+    const res = await axios.get(`https://pokeapi.co/api/v2/pokemon/${id}`);
+    return res;
   };
+
+  useEffect(() => {
+    getPokemonList();
+  });
 
   return (
     <div className="Home-Page">
       <header className="Home">
         <h1>Welcome to my Pokédex!</h1>
       </header>
-      {fetchPokemon()}
+      <div className="pokedex-grid">
+        {pokemon.map((p) => (
+          <PokedexList pokemon={p.data} />
+        ))}
+        <BacktoTopButton />
+      </div>
     </div>
   );
 }
