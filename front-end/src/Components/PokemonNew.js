@@ -43,16 +43,15 @@ function PokemonNew() {
         <input
           id="pokedex"
           type="number"
-          // value={pokemon.pokedex}
           onChange={handleTextChange}
+          placeholder="No."
         />
         <label htmlFor="name">Name:</label>
         <input
           id="name"
-          value={pokemon.name}
           type="text"
           onChange={handleTextChange}
-          placeholder="name"
+          placeholder="Name"
           required
         />
         <label htmlFor="type">Type:</label>
@@ -60,8 +59,7 @@ function PokemonNew() {
           id="type"
           type="text"
           name="type"
-          value={pokemon.type}
-          placeholder="type"
+          placeholder="Type"
           onChange={handleTextChange}
         />
         <label htmlFor="region">Region:</label>
@@ -69,20 +67,23 @@ function PokemonNew() {
           id="region"
           type="text"
           name="region"
-          value={pokemon.region}
           onChange={handleTextChange}
-          placeholder="region"
+          placeholder="Region"
         />
         <label htmlFor="favorite">Capture Status:</label>
         <input
           id="favorite"
           type="checkbox"
           name="favorite"
-          value={pokemon.favorite}
           onChange={onChange}
         />
         <label htmlFor="image">Pokemon Image: </label>
-        <input id="image" type="text" onChange={handleTextChange} />
+        <input
+          id="image"
+          type="text"
+          onChange={handleTextChange}
+          placeholder="Add Image URL"
+        />
         <br />
         <input id="submit" type="submit" value="Add New Pokemon" />
       </form>

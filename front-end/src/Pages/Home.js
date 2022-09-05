@@ -8,7 +8,7 @@ function Home() {
 
   const getPokemonList = async () => {
     let pokemonArray = [];
-    for (let i = 1; i <= 905; i++) {
+    for (let i = 1; i <= 151; i++) {
       pokemonArray.push(await getPokemonData(i));
     }
     // console.log(pokemonArray);

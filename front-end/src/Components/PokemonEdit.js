@@ -53,7 +53,7 @@ function PokemonEdit() {
         <label htmlFor="pokedex">Pokedex No.</label>
         <input
           id="pokedex"
-          type="text"
+          type="number"
           value={pokemon.pokedex}
           onChange={handleTextChange}
         />

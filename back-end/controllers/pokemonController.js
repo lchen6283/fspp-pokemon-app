@@ -12,7 +12,6 @@ const {
   checkBoolean,
   checkName,
   checkForNoAdditionalParams,
-  formatName,
 } = require("../validations/checkPokemon");
 
 // INDEX
@@ -46,8 +45,7 @@ pokemon.post(
   async (req, res) => {
     try {
       const pokemon = await createPokemon(req.body);
-      pokemon[0].name = formatName(pokemon[0].name);
-      res.json(pokemon[0]);
+      res.json(pokemon);
     } catch (error) {
       res.status(400).json({ error: error });
     }
