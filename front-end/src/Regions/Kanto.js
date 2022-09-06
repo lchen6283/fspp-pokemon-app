@@ -4,12 +4,12 @@ import BacktoTopButton from "../Components/BacktoTopButton";
 import RegionNav from "../Components/RegionNav";
 import axios from "axios";
 
-function Home() {
+function Kanto() {
   const [pokemon, setPokemon] = useState([]);
 
   const getPokemonList = async () => {
     let pokemonArray = [];
-    for (let i = 1; i <= 905; i++) {
+    for (let i = 1; i <= 151; i++) {
       pokemonArray.push(await getPokemonData(i));
     }
     setPokemon(pokemonArray);
@@ -40,4 +40,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default Kanto;

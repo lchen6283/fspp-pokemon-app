@@ -4,12 +4,12 @@ import BacktoTopButton from "../Components/BacktoTopButton";
 import RegionNav from "../Components/RegionNav";
 import axios from "axios";
 
-function Home() {
+export default function Sinnoh() {
   const [pokemon, setPokemon] = useState([]);
 
   const getPokemonList = async () => {
     let pokemonArray = [];
-    for (let i = 1; i <= 905; i++) {
+    for (let i = 387; i <= 493; i++) {
       pokemonArray.push(await getPokemonData(i));
     }
     setPokemon(pokemonArray);
@@ -39,5 +39,3 @@ function Home() {
     </div>
   );
 }
-
-export default Home;
