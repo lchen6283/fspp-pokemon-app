@@ -1,37 +1,16 @@
-import React, { useState, useEffect } from "react";
 import PokedexList from "../Components/PokedexList";
 import BacktoTopButton from "../Components/BacktoTopButton";
 import RegionNav from "../Components/RegionNav";
-import axios from "axios";
 
-export default function Hoenn() {
-  const [pokemon, setPokemon] = useState([]);
-
-  const getPokemonList = async () => {
-    let pokemonArray = [];
-    for (let i = 252; i <= 386; i++) {
-      pokemonArray.push(await getPokemonData(i));
-    }
-    setPokemon(pokemonArray);
-  };
-
-  const getPokemonData = async (id) => {
-    const res = await axios.get(`https://pokeapi.co/api/v2/pokemon/${id}`);
-    return res;
-  };
-
-  useEffect(() => {
-    getPokemonList();
-  });
-
+export default function Hoenn({ pokemon }) {
   return (
     <div className="Home-Page">
       <header className="Home">
-        <h1>Welcome to my Pokédex!</h1>
+        <h1>Hoenn Pokédex!</h1>
       </header>
       <RegionNav />
       <div className="pokedex-grid">
-        {pokemon.map((p) => (
+        {pokemon.slice(251, 386).map((p) => (
           <PokedexList pokemon={p.data} />
         ))}
         <BacktoTopButton />

@@ -1,29 +1,8 @@
-import React, { useState, useEffect } from "react";
 import PokedexList from "../Components/PokedexList";
 import BacktoTopButton from "../Components/BacktoTopButton";
 import RegionNav from "../Components/RegionNav";
-import axios from "axios";
 
-function Home() {
-  const [pokemon, setPokemon] = useState([]);
-
-  const getPokemonList = async () => {
-    let pokemonArray = [];
-    for (let i = 1; i <= 905; i++) {
-      pokemonArray.push(await getPokemonData(i));
-    }
-    setPokemon(pokemonArray);
-  };
-
-  const getPokemonData = async (id) => {
-    const res = await axios.get(`https://pokeapi.co/api/v2/pokemon/${id}`);
-    return res;
-  };
-
-  useEffect(() => {
-    getPokemonList();
-  });
-
+function Home({ pokemon }) {
   return (
     <div className="Home-Page">
       <header className="Home">
