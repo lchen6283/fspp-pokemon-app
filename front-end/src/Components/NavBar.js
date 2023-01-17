@@ -12,6 +12,7 @@ export default function NavBar() {
       <button className="header">
         <Link to="/pokemon/new">New Pokemon</Link>
       </button>
+      <button>Dark Mode</button>
     </nav>
   );
 }
